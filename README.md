@@ -50,14 +50,13 @@ sudo apt install -y \
 ### Build and install
 
 ```bash
-# Change directory to the location where the colcon workspace will be created
-cd <path_to_ws>
-# Create workspace directory
-mkdir -p fastdds_python_ws/src
-cd fastdds_python_ws
+# Create a `Fast-DDS-python` directory in which to download and build Fast DDS Python bindings and its dependencies:
+mkdir ~/Fast-DDS-python
+cd ~/Fast-DDS-python
 # Get workspace setup file (note this address was changed to our fork and to v1.4.3, which is needed for compatibility with the controller messages).
 wget https://raw.githubusercontent.com/foundationbot/Fast-DDS-python/v1.4.3/fastdds_python.repos
 # Download repositories
+mkdir src
 vcs import src < fastdds_python.repos
 # Build the workspace
 colcon build
