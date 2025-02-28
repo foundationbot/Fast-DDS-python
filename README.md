@@ -62,7 +62,46 @@ vcs import src < fastdds_python.repos
 colcon build
 ```
 
+When running an instance of an application using Fast DDS Python bindings, the colcon overlay built in the dedicated Fast-DDS-python directory must be sourced. There are two possibilities:
+
+Every time a new shell is opened, prepare the environment locally by typing the command:
+
+```source ~/Fast-DDS-python/install/setup.bash```
+
+Add the sourcing of the colcon overlay permanently to the PATH, by typing the following:
+
+```echo 'source ~/Fast-DDS-python/install/setup.bash' >> ~/.bashrc```
+
 Please, refer to [colcon documentation](https://colcon.readthedocs.io/en/released/reference/verb/build.html) for more information, such as building only one of the packages.
+
+## Installing Fast-DDS Gen
+
+### Java JDK
+The JDK is a development environment for building applications and components using the Java language. There are several versions of Java available. For instance, to install Java 11 JDK, run the following command:
+
+```sudo apt install openjdk-17-jdk```
+
+Note: Fast DDS-Gen supports Java versions from 11 to 19.
+
+### Compiling Fast-DDS Gen
+In order to compile Fast DDS-Gen, an executable script is included in the repository which will download Gradle temporarily for the compilation step. Please, follow the steps below to build Fast DDS-Gen:
+
+Note
+
+Since Fast DDS was installed following the Colcon installation, Fast DDS-Gen’s repository can be found under the src directory within the colcon workspace.
+```
+cd ~/Fast-DDS/src
+cd fastddsgen
+./gradlew assemble
+```
+Note: In case that a supported Gradle version is already installed in the system, Fast DDS-Gen can also be built running directly:
+```
+gradle assemble
+```
+
+## Using Fast-DDS Gen to Generate Python Message
+
+TODO
 
 ## Python example
 
