@@ -77,7 +77,7 @@ Please, refer to [colcon documentation](https://colcon.readthedocs.io/en/release
 ## Installing Fast-DDS Gen
 
 ### Java JDK
-The JDK is a development environment for building applications and components using the Java language. There are several versions of Java available. For instance, to install Java 11 JDK, run the following command:
+The JDK is a development environment for building applications and components using the Java language. There are several versions of Java available. For instance, to install Java 17 JDK, run the following command:
 
 ```sudo apt install openjdk-17-jdk```
 
